@@ -2,6 +2,7 @@ package br.com.challenge.picpay.Desafio.Picpay.domain.user;
 
 import java.math.BigDecimal;
 
+import br.com.challenge.picpay.Desafio.Picpay.dto.UserDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -25,6 +26,16 @@ import lombok.Setter;
 @EqualsAndHashCode(of = "id")
 public class User {
     
+    public User(UserDTO userDTO) {
+        this.firstName = userDTO.firstName();
+        this.lastName = userDTO.lastName();
+        this.email = userDTO.email();
+        this.document = userDTO.document();
+        this.password = userDTO.password();
+        this.balance = userDTO.balance();
+        this.userType = userDTO.userType();
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

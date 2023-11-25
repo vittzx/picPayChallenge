@@ -1,6 +1,6 @@
 package br.com.challenge.picpay.Desafio.Picpay.domain.user;
 
-public enum UserType {
+public enum UserType{
     COMMON,
     MERCHANT
 }
