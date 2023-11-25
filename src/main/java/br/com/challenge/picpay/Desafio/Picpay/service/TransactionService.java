@@ -2,6 +2,7 @@ package br.com.challenge.picpay.Desafio.Picpay.service;
 
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -66,6 +67,7 @@ public class TransactionService {
         String message = messageDTO.getBody().message();
 
         if(messageDTO.getStatusCode() == HttpStatus.OK){
+            System.out.println("Verificacao Autorizada!");
             return "Autorizado".equals(message);
         }
         return false;
@@ -73,6 +75,11 @@ public class TransactionService {
 
     private LocalDateTime timeNow(){
         return LocalDateTime.now();
+    }
+
+
+    public List<Transaction> findAllTransactions() {
+        return transactionRepository.findAll();
     }
 
 }
