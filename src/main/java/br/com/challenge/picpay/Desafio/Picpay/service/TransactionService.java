@@ -29,8 +29,8 @@ public class TransactionService {
     @Autowired
     private TransactionRepository transactionRepository;
 
-    @Autowired
-    private RestTemplate restTemplate;
+    
+    private RestTemplate restTemplate = new RestTemplate();
 
     public Transaction createTransaction(@RequestBody @Valid TransactionDTO data) throws Exception{
 
