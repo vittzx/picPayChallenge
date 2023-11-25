@@ -8,6 +8,6 @@ public record ErrorDTO(String field, String message) {
     }
 
     public ErrorDTO(Exception e){
-        this("500", e.getMessage());
+        this("400 bad request", e.getMessage());
     }
 }
